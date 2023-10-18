@@ -25,7 +25,6 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // setLoading(true);
       dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
@@ -35,20 +34,13 @@ const SignIn = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      // console.log(data);
       if (data.success === false) {
-        // setLoading(false);
-        // setError(data.message);
         dispatch(signInFailure(data.message));
         return;
       }
-      // setLoading(false);
-      // setError(null);
       dispatch(signInSuccess(data));
       navigate("/");
     } catch (error) {
-      // setLoading(false);
-      // setError(error.message);
       dispatch(signInFailure(error.message));
     }
   };
@@ -61,12 +53,6 @@ const SignIn = () => {
         onChange={handleChange}
         onSubmit={handleSubmit}
       >
-        {/* <input
-          type="text"
-          placeholder="username"
-          className="border p-3 rounded-lg"
-          id="username"
-        /> */}
         <input
           type="email"
           placeholder="email"
@@ -80,7 +66,7 @@ const SignIn = () => {
           id="password"
         />
         <button
-          disabled={loading}
+          // disabled={loading}
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
         >
           {loading ? "loading..." : "Sign In"}
