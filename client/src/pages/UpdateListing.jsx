@@ -307,7 +307,7 @@ export default function UpdateListing() {
                 {/* <p>Regular Price</p>
                 <span className="text-xs">($ / Month)</span> */}
                 {formData.type === "rent" && (
-                  <span className="text-xs">($ / month)</span>
+                  <span className="text-xs">(₹ / month)</span>
                 )}
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function UpdateListing() {
                   {/* <p>Discounted Price</p>
                   <span className="text-xs">($ / Month)</span> */}
                   {formData.type === "rent" && (
-                    <span className="text-xs">($ / month)</span>
+                    <span className="text-xs">(₹ / month)</span>
                   )}
                 </div>
               </div>
